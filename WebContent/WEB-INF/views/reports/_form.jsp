@@ -26,5 +26,11 @@
 <textarea name="content" rows="10" cols="50">${report.content}</textarea>
 <br /><br />
 
+<label>出勤（type="time"）:<input type="time" name="begined_at" value='${report.begined_at}'></label>
+<br /><br />
+
+<label>退勤（type="time"）:<input type="time" name="finished_at" value='${report.finished_at}'></label>
+<br /><br />
+
 <input type="hidden" name="_token" value="${_token}" />
 <button type="submit">投稿</button>

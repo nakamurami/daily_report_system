@@ -55,11 +55,34 @@ public class Report {
     @Column(name = "content", nullable = false)
     private String content;
 
+    @Column(name = "begined_at" , nullable = false)
+    private Timestamp begined_at;
+
+    @Column(name = "finished_at" , nullable = false)
+    private Timestamp finished_at;
+
+    public Timestamp getBegined_at() {
+        return begined_at;
+    }
+
+    public void setBegined_at(Timestamp begined_at) {
+        this.begined_at = begined_at;
+    }
+
+    public Timestamp getFinished_at() {
+        return finished_at;
+    }
+
+    public void setFinished_at(Timestamp finished_at) {
+        this.finished_at = finished_at;
+    }
+
     @Column(name = "created_at", nullable = false)
     private Timestamp created_at;
 
     @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
+
 
     public Integer getId() {
         return id;
@@ -116,4 +139,7 @@ public class Report {
     public void setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
     }
+
 }
+
+
