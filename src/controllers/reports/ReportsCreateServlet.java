@@ -55,19 +55,11 @@ public class ReportsCreateServlet extends HttpServlet {
             r.setTitle(request.getParameter("title"));
             r.setContent(request.getParameter("content"));
 
-            Date begined_at = new Date(System.currentTimeMillis());
-            String bg_str = request.getParameter("begined_at");
-            if(bg_str != null && !bg_str.equals("")) {
-                begined_at = Date.valueOf(request.getParameter("begined_at"));
-            }
-            r.setReport_date(begined_at);
+            String begined_at =rd_str + " "  + request.getParameter("begined_at")+":00";
+            r.setBegined_at(Timestamp.valueOf(begined_at));
 
-            Date finished_at = new Date(System.currentTimeMillis());
-            String fi_str = request.getParameter("finished_at");
-            if(fi_str != null && !fi_str.equals("")) {
-                finished_at = Date.valueOf(request.getParameter("finished_at"));
-            }
-            r.setReport_date(finished_at);
+            String finished_at =rd_str+" "+request.getParameter("finished_at")+":00";
+            r.setFinished_at(Timestamp.valueOf(finished_at));
 
 
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
